@@ -62,8 +62,3 @@ def handle_message(message):
                                  "рисовая каша", "омлет", "овсяная каша", "вафли",
                                  "скрэмбл", "манная каша", "творог", "гречневая каша", "шакшука"]:
         bot.send_message(message.chat.id, f"Вы выбрали: {message.text}\nПриятного аппетита!")
-
-# Запуск бота
-if __name__ == '__main__':
-    print("Бот запущен...")
-    bot.infinity_polling()
