@@ -30,7 +30,7 @@ def handle_message(message):
         
         # Список блюд для завтрака
         breakfast_dishes = [
-            "Блины", "Сырники", "Оладья", "Яичница",
+            "Блины", "Сырники", "Оладьи", "Яичница",
             "Рисовая каша", "Омлет", "Овсяная каша", "Вафли",
             "Скрэмбл", "Манная каша", "Творог", "Гречневая каша", "Шакшука"
         ]
@@ -39,7 +39,14 @@ def handle_message(message):
         for dish in breakfast_dishes:
             markup.add(types.KeyboardButton(dish))
 
-        # Список блюд для обеда
+    # Обработчик текстовых сообщений
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    if message.text.lower() == 'обед':
+        # Создаем клавиатуру для блюд на обед
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)   
+    
+    # Список блюд для обеда
         lunch_dishes = [
             "Минестроне", "Чечевичный суп", "Окрошка", "Врап",
             "Щавелевый суп", "Шаверма", "Гороховый суп", "Рыбный суп",
@@ -49,7 +56,14 @@ def handle_message(message):
         for dish in lunch_dishes:
             markup.add(types.KeyboardButton(dish))
 
-        # Список блюд для ужина
+    # Обработчик текстовых сообщений
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    if message.text.lower() == 'ужин':
+        # Создаем клавиатуру для блюд на ужин
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)   
+    
+    # Список блюд для ужина
         dinner_dishes = [
             "Запеченная рыба", "Запеченное мясо", "Тушеная капуста", "Плов",
             "Болоньезе", "Шаверма", "Драники", "Соус томатный",
