@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 
 bot = telebot.TeleBot('8411699454:AAFtArqY1tFgz89qGK18JmWpMEbfXtNJihY')
+admin_id = 387239377
 
 # Обработчик команды /start
 @bot.message_handler(commands=['start'])
