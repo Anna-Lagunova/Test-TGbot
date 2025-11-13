@@ -41,7 +41,7 @@ def handle_message(message):
             markup.add(types.KeyboardButton(dish))
         bot.send_message(message.chat.id, "Выберите блюдо на обед:", reply_markup=markup)
 
-if text == 'ужин':
+    elif text == 'ужин':  # Исправлено: добавлен отступ
         dinner_dishes = [
             "Запеченная рыба", "Запеченное мясо", "Тушеная капуста", "Плов",
             "Болоньезе", "Шаверма", "Драники", "Соус томатный",
@@ -51,3 +51,6 @@ if text == 'ужин':
         for dish in dinner_dishes:
             markup.add(types.KeyboardButton(dish))
         bot.send_message(message.chat.id, "Выберите блюдо на ужин:", reply_markup=markup)
+
+# Запуск бота
+bot.polling(none_stop=True)
